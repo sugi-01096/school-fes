@@ -9,13 +9,16 @@ def main():
     scores2 = []
     while True:
         team_name = st.text_input("チーム名を入力してください")
-        score1 = st.number_input("スコア1を入力してください", min_value=0, value=0, step=1)
-        score2 = st.number_input("スコア2を入力してください", min_value=0, value=0, step=1)
-        
-        if st.button("チームを追加"):
-            teams.append(team_name)
-            scores1.append(score1)
-            scores2.append(score2)
+        if team_name:  # チーム名が入力されている場合のみスコアを入力
+            score1 = st.number_input("スコア1を入力してください", min_value=0, value=0, step=1)
+            score2 = st.number_input("スコア2を入力してください", min_value=0, value=0, step=1)
+            
+            if st.button("チームを追加"):
+                teams.append(team_name)
+                scores1.append(score1)
+                scores2.append(score2)
+        else:
+            st.warning("チーム名を入力してください")
         
         if st.button("終了"):
             break
