@@ -7,18 +7,22 @@ def main():
     teams = []
     scores1 = []
     scores2 = []
+    key_counter = 1  # カウンタ変数を初期化
 
-    team_name = st.text_input("チーム名を入力してください", key="team_name_input_1")
-    while team_name:
-        score1 = st.number_input("スコア1を入力してください", min_value=0, value=0, step=1, key="score1_input")
-        score2 = st.number_input("スコア2を入力してください", min_value=0, value=0, step=1, key="score2_input")
+    while True:
+        team_name = st.text_input("チーム名を入力してください", key=f"team_name_input_{key_counter}")
+        if not team_name:
+            break  # チーム名が空ならループを終了
+        
+        score1 = st.number_input("スコア1を入力してください", min_value=0, value=0, step=1, key=f"score1_input_{key_counter}")
+        score2 = st.number_input("スコア2を入力してください", min_value=0, value=0, step=1, key=f"score2_input_{key_counter}")
         
         if st.button("チームを追加"):
             teams.append(team_name)
             scores1.append(score1)
             scores2.append(score2)
         
-        team_name = st.text_input("チーム名を入力してください", key="team_name_input_2")
+        key_counter += 1  # カウンタ変数を増やす
     
     if teams:
         df = pd.DataFrame({'Team': teams, 'Score1': scores1, 'Score2': scores2})
@@ -35,6 +39,9 @@ def main():
         st.table(df[['Team', 'Score1', 'Rank1', 'Score2', 'Rank2', 'TotalScore', 'TotalRank']].reset_index(drop=True))
     else:
         st.write("チームが追加されていません。")
+
+        
+        # 以降のコードは同様
 
 if __name__ == "__main__":
     main()
