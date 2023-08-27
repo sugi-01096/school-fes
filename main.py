@@ -23,6 +23,7 @@ def main():
     
     if teams:
         df = pd.DataFrame({'Team': teams, 'Score1': scores1, 'Score2': scores2})
+        
         # 各スコアごとに順位を付与
         df['Rank1'] = df['Score1'].rank(ascending=False).astype(int)
         df['Rank2'] = df['Score2'].rank(ascending=False).astype(int)
@@ -35,9 +36,6 @@ def main():
         st.table(df[['Team', 'Score1', 'Rank1', 'Score2', 'Rank2', 'TotalScore', 'TotalRank']].reset_index(drop=True))
     else:
         st.write("チームが追加されていません。")
-
-        
-        # 以降のコードは同様
 
 if __name__ == "__main__":
     main()
