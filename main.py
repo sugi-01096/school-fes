@@ -19,7 +19,6 @@ def main():
             team_data.append({'Team': team_name, 'Score1': score1, 'Score2': score2})
         
         team_counter += 1
-    
     if team_data:
         df = pd.DataFrame(team_data)
         
