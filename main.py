@@ -10,7 +10,7 @@ def main():
 
     team_name = st.text_input("チーム名を入力してください")
     while team_name:
-        score1 = st.number_input("スコア1を入力してください", min_value=0, value=0, step=1)
+        score1 = st.number_input("みやわきッキングスナイパー", min_value=0, value=0, step=1)
         score2 = st.number_input("スコア2を入力してください", min_value=0, value=0, step=1)
         
         if st.button("チームを追加"):
