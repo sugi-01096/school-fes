@@ -9,7 +9,7 @@ def main():
     scores2 = []
 
     while True:
-        team_name = st.text_input("チーム名を入力してください")
+        team_name = st.text_input("チーム名を入力してください", key=f"team_name_input_{len(teams)}")
         if not team_name:
             break
         
