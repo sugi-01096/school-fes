@@ -19,7 +19,6 @@ def main():
     
     if team_data:
         df = pd.DataFrame(team_data)
-    
     if teams:
         df = pd.DataFrame({'Team': teams, 'Score1': scores1, 'Score2': scores2})
         df = pd.DataFrame({'Team': teams, 'Score1': scores1, 'Score2': scores2})
