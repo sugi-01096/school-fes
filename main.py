@@ -1,5 +1,13 @@
 import streamlit as st
 import pandas as pd
+data = {
+    'Name': ['Alice', 'Bob', 'Charlie'],
+    'Age': [25, 30, 22],
+    'Country': ['USA', 'Canada', 'UK']
+}
+
+df = pd.DataFrame(data)
+print(df)
 
 def main():
     st.title('チームごとの順位とスコアの表示')
