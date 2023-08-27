@@ -22,6 +22,7 @@ def main():
     
     if teams:
         df = pd.DataFrame({'Team': teams, 'Score1': scores1, 'Score2': scores2})
+        df = pd.DataFrame({'Team': teams, 'Score1': scores1, 'Score2': scores2})
         
         # 各スコアごとに順位を付与
         df['Rank1'] = df['Score1'].rank(ascending=False).astype(int)
