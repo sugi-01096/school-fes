@@ -7,27 +7,22 @@ def main():
     teams = []
     scores1 = []
     scores2 = []
-    key_counter = 1  # カウンタ変数を初期化
 
     while True:
-        team_name = st.text_input("チーム名を入力してください", key=f"team_name_input_{key_counter}")
+        team_name = st.text_input("チーム名を入力してください")
         if not team_name:
-            break  # チーム名が空ならループを終了
+            break
         
-        score1 = st.number_input("スコア1を入力してください", min_value=0, value=0, step=1, key=f"score1_input_{key_counter}")
-        score2 = st.number_input("スコア2を入力してください", min_value=0, value=0, step=1, key=f"score2_input_{key_counter}")
+        score1 = st.number_input("スコア1を入力してください", min_value=0, value=0, step=1)
+        score2 = st.number_input("スコア2を入力してください", min_value=0, value=0, step=1)
         
-        if st.button("チームを追加", key=f"add_button_{key_counter}"):
+        if st.button("チームを追加"):
             teams.append(team_name)
             scores1.append(score1)
             scores2.append(score2)
-
-        
-        key_counter += 1  # カウンタ変数を増やす
     
     if teams:
         df = pd.DataFrame({'Team': teams, 'Score1': scores1, 'Score2': scores2})
-        
         # 各スコアごとに順位を付与
         df['Rank1'] = df['Score1'].rank(ascending=False).astype(int)
         df['Rank2'] = df['Score2'].rank(ascending=False).astype(int)
