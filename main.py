@@ -14,8 +14,8 @@ def main():
         if not team_name:
             break
         
-        score1 = st.number_input("スコア1を入力してください", min_value=0, value=0, step=1, key=f"score1_input_{key_counter}")
-        score2 = st.number_input("スコア2を入力してください", min_value=0, value=0, step=1, key=f"score2_input_{key_counter}")
+        score1 = st.number_input("スコア1を入力してください", min_value=0, value=0, step=10, key=f"score1_input_{key_counter}")
+        score2 = st.number_input("スコア2を入力してください", min_value=0, value=0, step=10, key=f"score2_input_{key_counter}")
         
         if st.button("チームを追加", key=f"add_button_{key_counter}"):
             teams.append(team_name)
