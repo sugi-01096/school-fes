@@ -17,10 +17,11 @@ def main():
         score1 = st.number_input("スコア1を入力してください", min_value=0, value=0, step=1, key=f"score1_input_{key_counter}")
         score2 = st.number_input("スコア2を入力してください", min_value=0, value=0, step=1, key=f"score2_input_{key_counter}")
         
-        if st.button("チームを追加"):
+        if st.button("チームを追加", key=f"add_button_{key_counter}"):
             teams.append(team_name)
             scores1.append(score1)
             scores2.append(score2)
+
         
         key_counter += 1  # カウンタ変数を増やす
     
