@@ -8,7 +8,7 @@ def main():
     scores1 = []
     scores2 = []
 
-    team_name = st.text_input("チーム名を入力してください", key="team_name_input")
+    team_name = st.text_input("チーム名を入力してください", key="team_name_input_1")
     while team_name:
         score1 = st.number_input("スコア1を入力してください", min_value=0, value=0, step=1, key="score1_input")
         score2 = st.number_input("スコア2を入力してください", min_value=0, value=0, step=1, key="score2_input")
@@ -18,7 +18,7 @@ def main():
             scores1.append(score1)
             scores2.append(score2)
         
-        team_name = st.text_input("チーム名を入力してください", key="team_name_input")
+        team_name = st.text_input("チーム名を入力してください", key="team_name_input_2")
     
     if teams:
         df = pd.DataFrame({'Team': teams, 'Score1': scores1, 'Score2': scores2})
