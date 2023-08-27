@@ -1,13 +1,5 @@
 import streamlit as st
 import pandas as pd
-data = {
-    'Name': ['Alice', 'Bob', 'Charlie'],
-    'Age': [25, 30, 22],
-    'Country': ['USA', 'Canada', 'UK']
-}
-
-df = pd.DataFrame(data)
-st.print(df)
 
 def main():
     st.title('チームごとの順位とスコアの表示')
@@ -18,7 +10,7 @@ def main():
 
     team_name = st.text_input("チーム名を入力してください", key="team_name_input")
     while team_name:
-        score1 = st.number_input("みやわきッキングスナイパー", min_value=0, value=0, step=1, key="score1_input")
+        score1 = st.number_input("スコア1を入力してください", min_value=0, value=0, step=1, key="score1_input")
         score2 = st.number_input("スコア2を入力してください", min_value=0, value=0, step=1, key="score2_input")
         
         if st.button("チームを追加"):
