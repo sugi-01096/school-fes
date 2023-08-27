@@ -7,7 +7,7 @@ data = {
 }
 
 df = pd.DataFrame(data)
-print(df)
+st.print(df)
 
 def main():
     st.title('チームごとの順位とスコアの表示')
